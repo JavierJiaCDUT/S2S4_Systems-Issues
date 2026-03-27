@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Error vs Failure</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="slide light theme-tech">
+    <p class="eyebrow animate">Comparison</p>
+    <h2 class="slide-title animate d1">Error vs Failure</h2>
+    <div class="content">
+      <table class="data-table animate d2">
+        <thead>
+          <tr>
+            <th>Attribute</th>
+            <th>Error</th>
+            <th>Failure</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Definition</b></td>
+            <td>Flaws in code, design, or operation</td>
+            <td>System fails to provide the required service</td>
+          </tr>
+          <tr>
+            <td><b>Nature</b></td>
+            <td>Root Cause</td>
+            <td>Manifestation (Symptom)</td>
+          </tr>
+          <tr>
+            <td><b>Visibility</b></td>
+            <td>May lie dormant in code, un-triggered</td>
+            <td>Directly perceived by the user</td>
+          </tr>
+          <tr class="highlight">
+            <td><b>Relationship</b></td>
+            <td>Error is the <b>CAUSE</b></td>
+            <td>Failure is the <b>CONSEQUENCE</b></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="animate d3" style="margin-top: 4vh; color: var(--fg-muted); font-size: 0.9em; border-left: 2px solid var(--border-strong); padding-left: 1em;">
+        <b>Key Insight:</b> Not all Errors lead to Failures. Some may never be triggered. But behind every Failure, there is always at least one Error.
+      </div>
+    </div>
+    <div class="page-indicator">8 / 22</div>
+  </div>
+</body>
+</html>

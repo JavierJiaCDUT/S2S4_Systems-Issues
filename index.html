@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Systems Issues – Errors, Failures, Risks and Hazards</title>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+      width: 100%; height: 100%;
+      overflow: hidden;
+      background: #050505;
+      font-family: 'Inter', 'PingFang SC', -apple-system, sans-serif;
+    }
+
+    .shell {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column;
+    }
+
+    #slideFrame {
+      flex: 1;
+      border: none;
+      transition: opacity 0.16s ease;
+    }
+
+    /* Bottom Navigation Bar */
+    .bar {
+      height: 44px;
+      background: rgba(10,10,10,0.97);
+      backdrop-filter: blur(12px);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      flex-shrink: 0;
+    }
+
+    .bar-left, .bar-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    #pageNum {
+      font-size: 13px;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.06em;
+      min-width: 64px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .btn {
+      width: 32px; height: 32px;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 6px;
+      background: rgba(255,255,255,0.04);
+      color: rgba(255,255,255,0.55);
+      font-size: 15px;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.12s ease;
+    }
+
+    .btn:hover:not(:disabled) {
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      border-color: rgba(255,255,255,0.18);
+    }
+
+    .btn:disabled {
+      opacity: 0.18;
+      cursor: default;
+    }
+
+    .hint {
+      font-size: 11px;
+      color: rgba(255,255,255,0.16);
+      letter-spacing: 0.05em;
+    }
+
+    #pageNum {
+      cursor: pointer;
+      border-radius: 4px;
+      padding: 2px 8px;
+      transition: background 0.12s;
+    }
+    #pageNum:hover {
+      background: rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.55);
+    }
+
+    /* Slide Navigator Drawer */
+    .nav-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 900;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(4px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.18s ease;
+    }
+    .nav-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .nav-drawer {
+      position: fixed;
+      left: 0; bottom: 44px;
+      width: 340px;
+      max-height: calc(100vh - 54px);
+      z-index: 910;
+      background: rgba(18,18,18,0.98);
+      backdrop-filter: blur(16px);
+      border-right: 1px solid rgba(255,255,255,0.06);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      border-top-right-radius: 10px;
+      overflow-y: auto;
+      transform: translateX(-100%);
+      transition: transform 0.22s cubic-bezier(0.16,1,0.3,1);
+      padding: 8px 0;
+    }
+    .nav-drawer.open {
+      transform: translateX(0);
+    }
+
+    .nav-drawer::-webkit-scrollbar { width: 4px; }
+    .nav-drawer::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 2px; }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 9px 20px;
+      cursor: pointer;
+      transition: background 0.1s;
+      border: none;
+      background: none;
+      width: 100%;
+      text-align: left;
+      font-family: inherit;
+    }
+    .nav-item:hover {
+      background: rgba(255,255,255,0.06);
+    }
+    .nav-item.active {
+      background: rgba(37,99,235,0.12);
+    }
+    .nav-item .nav-num {
+      font-size: 11px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.25);
+      min-width: 24px;
+      font-variant-numeric: tabular-nums;
+    }
+    .nav-item.active .nav-num {
+      color: #2563eb;
+    }
+    .nav-item .nav-label {
+      font-size: 13px;
+      color: rgba(255,255,255,0.55);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .nav-item.active .nav-label {
+      color: rgba(255,255,255,0.9);
+      font-weight: 500;
+    }
+    .nav-item.section-item {
+      border-top: 1px solid rgba(255,255,255,0.05);
+      margin-top: 2px;
+      padding-top: 11px;
+    }
+    .nav-item.section-item .nav-label {
+      font-weight: 600;
+      color: rgba(255,255,255,0.4);
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+    }
+    .nav-item.section-item.active .nav-label {
+      color: #2563eb;
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <iframe id="slideFrame" src="slides/01-cover.html"></iframe>
+    <div class="bar">
+      <div class="bar-left">
+        <span id="pageNum" title="Open slide navigator">1 / 22</span>
+      </div>
+      <div class="bar-right">
+        <button class="btn" id="prevBtn" title="Previous (←)">‹</button>
+        <button class="btn" id="nextBtn" title="Next (→)">›</button>
+        <button class="btn" id="fsBtn" title="Fullscreen (F)">⛶</button>
+        <span class="hint">← → Prev/Next &nbsp;·&nbsp; F Fullscreen</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide Navigator -->
+  <div class="nav-overlay" id="navOverlay"></div>
+  <div class="nav-drawer" id="navDrawer"></div>
+  <script src="js/main.js"></script>
+</body>
+</html>

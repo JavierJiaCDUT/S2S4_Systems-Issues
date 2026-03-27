@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RCA</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="slide light theme-tech">
+    <p class="eyebrow animate">Methodology</p>
+    <h2 class="slide-title animate d1">RCA (Root Cause Analysis): 5 Whys</h2>
+    <div class="content">
+      <div class="animate d2" style="font-size: clamp(16px, 1.8vw, 24px); color: #dc2626; font-weight: 600; margin-bottom: 2vh;">
+        Failure: User cannot login to the system
+      </div>
+      <ul class="clean-list">
+        <li class="animate d3" data-index="1"><b>Why?</b> → Server returns a 500 internal error.</li>
+        <li class="animate d4" data-index="2"><b>Why?</b> → Database connection timeout.</li>
+        <li class="animate d5" data-index="3"><b>Why?</b> → Database connection pool is full.</li>
+        <li class="animate d6" data-index="4"><b>Why?</b> → A specific query did not close the connection.</li>
+        <li class="animate d7" data-index="5"><b>Why?</b> → Missing `finally` block in code to release resources.</li>
+      </ul>
+      <div class="animate d8" style="margin-top: 3vh; padding-top: 2vh; border-top: 2px solid var(--border);">
+        <b>Root Cause:</b> Resource management Logic Error.<br>
+        <span style="color: var(--accent); font-weight: 500;">Action: Add finally block + Write automated test for connection leaks.</span>
+      </div>
+    </div>
+    <div class="page-indicator">10 / 22</div>
+  </div>
+</body>
+</html>

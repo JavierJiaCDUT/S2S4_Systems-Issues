@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FMEA</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="slide light theme-tech">
+    <p class="eyebrow animate">Methodology</p>
+    <h2 class="slide-title animate d1">FMEA (Failure Mode and Effects Analysis)</h2>
+    <div class="content">
+      <p class="animate d2" style="font-size: clamp(16px, 1.8vw, 24px); margin-bottom: 3vh;">
+        <b>Core idea:</b> Before problems happen, anticipate <i>"What could go wrong? What are the consequences? How do we prevent it?"</i>
+      </p>
+      <div class="metric-row animate d3" style="margin-bottom: 4vh;">
+        <div class="metric-item">
+          <div class="metric-value">S</div>
+          <div class="metric-label"><b>Severity</b> (1-10)<br>How bad are the consequences?</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-value">O</div>
+          <div class="metric-label"><b>Occurrence</b> (1-10)<br>How likely is it to happen?</div>
+        </div>
+        <div class="metric-item">
+          <div class="metric-value">D</div>
+          <div class="metric-label"><b>Detection</b> (1-10)<br>How likely are we to detect it?</div>
+        </div>
+      </div>
+      <div class="animate d4" style="background: var(--bg-subtle); padding: 2vh 3vw; border-radius: 8px;">
+        <b style="color: var(--accent); font-size: 1.2em;">RPN = Severity × Occurrence × Detection</b>
+        <p style="color: var(--fg-muted); margin-top: 1vh;">(Risk Priority Number) - The higher the RPN, the higher the priority to fix.</p>
+      </div>
+    </div>
+    <div class="page-indicator">9 / 22</div>
+  </div>
+</body>
+</html>
