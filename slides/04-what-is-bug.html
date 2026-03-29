@@ -9,12 +9,50 @@
   <div class="slide light theme-tech">
     <p class="eyebrow animate">Concept</p>
     <h2 class="slide-title animate d1">What is a Bug?</h2>
-    <div class="content">
-      <ul class="clean-list">
-        <li class="animate d2" data-index="01"><b>September 9, 1947:</b> The first actual case of bug being found. It was a real moth stuck in a relay in the Harvard Mark II.</li>
-        <li class="animate d3" data-index="02">If a test is "Given conditions, When X happens, Then Y is observed"—a Bug is the <b>failure of that test</b>.</li>
-        <li class="animate d4" data-index="03">A Bug is, by definition, <b>unexpected</b>.</li>
-      </ul>
+    <div class="content split-layout bug-slide-layout">
+      <div>
+        <ul class="clean-list">
+          <li class="animate d2" data-index="01"><b>September 9, 1947:</b> The first actual case of bug being found. It was a real moth stuck in a relay in the Harvard Mark II.</li>
+          <li class="animate d3" data-index="02">A bug is not just “bad code” — it is a <b>mismatch</b> between the <b>expected result</b> and the <b>actual result</b>.</li>
+          <li class="animate d4" data-index="03">If a test says <b>Given</b> conditions, <b>When</b> an action happens, <b>Then</b> a result should be observed, a bug is the <b>failure of that expectation</b>.</li>
+        </ul>
+        <p class="bug-note animate d5">Key idea: software can run, but if the observed outcome is different from what the test promised, that difference is the bug.</p>
+      </div>
+
+      <div class="gwt-diagram animate-scale d4">
+        <div class="gwt-step">
+          <span class="gwt-label">Given</span>
+          <p>User enters correct username and password</p>
+        </div>
+        <div class="gwt-arrow">→</div>
+        <div class="gwt-step">
+          <span class="gwt-label">When</span>
+          <p>User clicks <b>Login</b></p>
+        </div>
+        <div class="gwt-arrow">→</div>
+        <div class="gwt-step">
+          <span class="gwt-label">Then</span>
+          <p>System should open the dashboard</p>
+        </div>
+
+        <div class="bug-divider"></div>
+
+        <div class="bug-result-row">
+          <div class="bug-result expected">
+            <span class="result-tag">Expected</span>
+            <p>Dashboard loads successfully</p>
+          </div>
+          <div class="bug-result actual">
+            <span class="result-tag">Actual</span>
+            <p>Error message appears and login fails</p>
+          </div>
+        </div>
+
+        <div class="bug-conclusion">
+          <span class="bug-badge">Bug</span>
+          <p>The observed behaviour does <b>not</b> match the expected behaviour.</p>
+        </div>
+      </div>
     </div>
     <div class="page-indicator">4 / 22</div>
   </div>
