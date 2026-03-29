@@ -396,6 +396,7 @@ html, body {
 }
 
 .bug-slide-layout > *:first-child {
+  border-right: none;
   padding-right: 2.4vw;
 }
 
