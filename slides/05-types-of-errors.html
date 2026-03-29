@@ -9,30 +9,42 @@
   <div class="slide light theme-tech">
     <p class="eyebrow animate">Part 1</p>
     <h2 class="slide-title animate d1">Three Types of System Errors</h2>
-    <div class="content">
-      <ul class="clean-list">
-        <li class="animate d2" data-index="1">
-          <div>
-            <b>Syntax Errors</b><br>
-            <span style="font-size: 0.85em; color: var(--fg-muted);">Mistakes that violate language rules, typically detected during compilation.<br>
-            <i>Examples: Missing semicolons, unmatched brackets, misspelled keywords.</i></span>
+    <div class="content visual-stack">
+      <p class="visual-intro animate d2">Different bugs appear at different moments in development: some are caught before the program runs, some crash during execution, and some quietly produce the wrong result.</p>
+      <div class="error-types-grid">
+        <div class="error-card syntax animate d3">
+          <div class="error-icon">&lt;/&gt;</div>
+          <h3>Syntax Error</h3>
+          <p>Mistakes that break the grammar rules of the programming language, usually caught by the compiler or interpreter.</p>
+          <div class="error-meta">
+            <div class="meta-pill"><b>Detected:</b> Before or during compilation</div>
+            <div class="meta-pill"><b>Typical signs:</b> Red underline, compile error, parser stops</div>
+            <div class="meta-pill"><b>Example:</b> Missing semicolon, unmatched bracket, misspelled keyword</div>
           </div>
-        </li>
-        <li class="animate d3" data-index="2">
-          <div>
-            <b>Runtime Errors</b><br>
-            <span style="font-size: 0.85em; color: var(--fg-muted);">The program compiles successfully but crashes at runtime.<br>
-            <i>Examples: Division by zero, invalid memory access, out of memory.</i></span>
+        </div>
+
+        <div class="error-card runtime animate d4">
+          <div class="error-icon">!</div>
+          <h3>Runtime Error</h3>
+          <p>The code starts running, but the system crashes or throws an exception when it reaches a problematic situation.</p>
+          <div class="error-meta">
+            <div class="meta-pill"><b>Detected:</b> While the program is executing</div>
+            <div class="meta-pill"><b>Typical signs:</b> Crash, exception, timeout, memory problem</div>
+            <div class="meta-pill"><b>Example:</b> Division by zero, invalid memory access, out of memory</div>
           </div>
-        </li>
-        <li class="animate d4" data-index="3">
-          <div>
-            <b>Logic Errors</b><br>
-            <span style="font-size: 0.85em; color: var(--fg-muted);">Flaws in logic that lead to incorrect results without crashing. Hardest to detect and fix.<br>
-            <i>Examples: Sorting algorithm reversed, missing edge cases.</i></span>
+        </div>
+
+        <div class="error-card logic animate d5">
+          <div class="error-icon">≈</div>
+          <h3>Logic Error</h3>
+          <p>The program runs without crashing, but the reasoning or algorithm is wrong, so the output is incorrect.</p>
+          <div class="error-meta">
+            <div class="meta-pill"><b>Detected:</b> During testing, review, or user feedback</div>
+            <div class="meta-pill"><b>Typical signs:</b> Wrong result, wrong decision, hidden edge case</div>
+            <div class="meta-pill"><b>Example:</b> Reversed sort order, wrong condition, missing boundary case</div>
           </div>
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
     <div class="page-indicator">5 / 22</div>
   </div>
