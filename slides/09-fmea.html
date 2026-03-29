@@ -9,27 +9,62 @@
   <div class="slide light theme-tech">
     <p class="eyebrow animate">Methodology</p>
     <h2 class="slide-title animate d1">FMEA (Failure Mode and Effects Analysis)</h2>
-    <div class="content">
-      <p class="animate d2" style="font-size: clamp(16px, 1.8vw, 24px); margin-bottom: 3vh;">
-        <b>Core idea:</b> Before problems happen, anticipate <i>"What could go wrong? What are the consequences? How do we prevent it?"</i>
-      </p>
-      <div class="metric-row animate d3" style="margin-bottom: 4vh;">
-        <div class="metric-item">
-          <div class="metric-value">S</div>
-          <div class="metric-label"><b>Severity</b> (1-10)<br>How bad are the consequences?</div>
+    <div class="content visual-stack">
+      <p class="visual-intro animate d2"><b>Core idea:</b> before problems happen, identify what could fail, what the effect would be, what causes it, and which issues deserve the highest priority.</p>
+      <div class="fmea-layout animate d3">
+        <div class="fmea-flow">
+          <div class="fmea-step">
+            <h3>Failure Mode</h3>
+            <p>What could go wrong?</p>
+            <ul>
+              <li>Payment service crashes</li>
+              <li>Sensor stops responding</li>
+            </ul>
+          </div>
+          <div class="fmea-step">
+            <h3>Effect</h3>
+            <p>What happens if it fails?</p>
+            <ul>
+              <li>User cannot complete payment</li>
+              <li>Service interruption</li>
+            </ul>
+          </div>
+          <div class="fmea-step">
+            <h3>Cause</h3>
+            <p>Why might it happen?</p>
+            <ul>
+              <li>High traffic overload</li>
+              <li>Poor error handling</li>
+            </ul>
+          </div>
+          <div class="fmea-step">
+            <h3>S / O / D</h3>
+            <p>Score severity, occurrence, and detection from 1–10.</p>
+          </div>
+          <div class="fmea-step">
+            <h3>Priority</h3>
+            <p>Use the result to decide what must be fixed first.</p>
+          </div>
         </div>
-        <div class="metric-item">
-          <div class="metric-value">O</div>
-          <div class="metric-label"><b>Occurrence</b> (1-10)<br>How likely is it to happen?</div>
+
+        <div class="score-panel">
+          <div class="score-card">
+            <h4>Severity (S)</h4>
+            <p>How serious are the consequences if the failure happens?</p>
+          </div>
+          <div class="score-card">
+            <h4>Occurrence (O)</h4>
+            <p>How likely is the failure mode to happen?</p>
+          </div>
+          <div class="score-card">
+            <h4>Detection (D)</h4>
+            <p>How likely are we to detect it before it reaches the user?</p>
+          </div>
+          <div class="rpn-card">
+            <b>RPN = Severity × Occurrence × Detection</b>
+            <p style="margin-top:0.5em; color:var(--fg-muted); line-height:1.45;">The higher the RPN, the higher the priority to reduce or control that risk.</p>
+          </div>
         </div>
-        <div class="metric-item">
-          <div class="metric-value">D</div>
-          <div class="metric-label"><b>Detection</b> (1-10)<br>How likely are we to detect it?</div>
-        </div>
-      </div>
-      <div class="animate d4" style="background: var(--bg-subtle); padding: 2vh 3vw; border-radius: 8px;">
-        <b style="color: var(--accent); font-size: 1.2em;">RPN = Severity × Occurrence × Detection</b>
-        <p style="color: var(--fg-muted); margin-top: 1vh;">(Risk Priority Number) - The higher the RPN, the higher the priority to fix.</p>
       </div>
     </div>
     <div class="page-indicator">9 / 22</div>

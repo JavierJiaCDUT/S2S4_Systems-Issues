@@ -9,38 +9,33 @@
   <div class="slide light theme-tech">
     <p class="eyebrow animate">Comparison</p>
     <h2 class="slide-title animate d1">Hazard vs Risk</h2>
-    <div class="content">
-      <table class="data-table animate d2">
-        <thead>
-          <tr>
-            <th>Attribute</th>
-            <th>Hazard</th>
-            <th>Risk</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><b>Definition</b></td>
-            <td>A condition or state that can cause harm.</td>
-            <td>The combination of Likelihood and Impact.</td>
-          </tr>
-          <tr>
-            <td><b>Nature</b></td>
-            <td>Static — it "exists" there.</td>
-            <td>Dynamic — considers "probability".</td>
-          </tr>
-          <tr>
-            <td><b>Example</b></td>
-            <td>Self-driving system fails to detect pedestrians in rain.</td>
-            <td>Deploying this system in a rainy city (Probability × Fatalities).</td>
-          </tr>
-          <tr class="highlight">
-            <td><b>Analogy</b></td>
-            <td>A cliff with no guardrails.</td>
-            <td>1000 people walking past that cliff every day.</td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="content visual-stack">
+      <p class="visual-intro animate d2">A <b>Hazard</b> is a dangerous condition that exists. <b>Risk</b> asks what could happen if people are exposed to that hazard, and how serious the consequences would be.</p>
+      <div class="compare-scene">
+        <div class="scene-card hazard animate d3">
+          <h3>Hazard = Dangerous State</h3>
+          <div class="scene-visual">
+            <p><b>Scenario:</b> A cliff has no guardrails.</p>
+          </div>
+          <ul>
+            <li><b>What exists?</b> A condition that can cause harm</li>
+            <li><b>Nature:</b> Static — it is simply there</li>
+            <li><b>System example:</b> Self-driving system cannot detect pedestrians in rain</li>
+          </ul>
+        </div>
+
+        <div class="scene-card risk animate d4">
+          <h3>Risk = Probability × Impact</h3>
+          <div class="scene-visual">
+            <p><b>Scenario:</b> 1000 people walk near that cliff every day in bad weather.</p>
+          </div>
+          <ul>
+            <li><b>What matters?</b> Likelihood of falling + severity of harm</li>
+            <li><b>Nature:</b> Dynamic — it depends on exposure and consequences</li>
+            <li><b>System example:</b> Deploying the system in a rainy city increases the chance of injury</li>
+          </ul>
+        </div>
+      </div>
     </div>
     <div class="page-indicator">13 / 22</div>
   </div>
