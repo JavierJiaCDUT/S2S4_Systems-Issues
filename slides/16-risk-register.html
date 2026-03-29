@@ -9,50 +9,58 @@
   <div class="slide light theme-tech">
     <p class="eyebrow animate">Tool</p>
     <h2 class="slide-title animate d1">Risk Register</h2>
-    <div class="content">
-      <p class="animate d2" style="font-size: clamp(14px, 1.5vw, 20px); color: var(--fg-muted); margin-bottom: 2vh;">
-        A document to record, track, and manage all identified risks.
-      </p>
-      <table class="data-table animate d3" style="font-size: clamp(12px, 1.2vw, 16px);">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Risk Description</th>
-            <th>Likelihood</th>
-            <th>Impact</th>
-            <th>Level</th>
-            <th>Strategy</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>R1</td>
-            <td>Payment API crashes under load</td>
-            <td>Possible</td>
-            <td>High</td>
-            <td><b>High</b></td>
-            <td><b>Mitigate:</b> Stress tests + Fallback</td>
-          </tr>
-          <tr class="highlight">
-            <td>R2</td>
-            <td>User data not encrypted</td>
-            <td>Likely</td>
-            <td>Critical</td>
-            <td><b>Extreme</b></td>
-            <td><b>Avoid:</b> Enforce AES-256 encryption</td>
-          </tr>
-          <tr>
-            <td>R3</td>
-            <td>Third-party API unstable</td>
-            <td>Possible</td>
-            <td>Medium</td>
-            <td><b>Medium</b></td>
-            <td><b>Transfer:</b> Setup backup API vendor</td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="animate d4" style="margin-top: 3.5vh; border-left: 2px solid var(--accent); padding-left: 1.5vw; color: var(--fg-muted); font-size: 0.9em;">
-        <b>Action info:</b> Before your Sprint 3 Review, create a Risk Register with your team identifying at least 3 risks and strategies.
+    <div class="content register-layout">
+      <div class="visual-stack animate d2">
+        <p class="visual-intro">A Risk Register is not just a table. It is the team’s working document for recording, prioritising, assigning, and monitoring important risks.</p>
+        <table class="data-table" style="font-size: clamp(12px, 1.12vw, 15px);">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Risk Description</th>
+              <th>Likelihood</th>
+              <th>Impact</th>
+              <th>Level</th>
+              <th>Strategy</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>R1</td>
+              <td>Payment API crashes under load</td>
+              <td>Possible</td>
+              <td>High</td>
+              <td><b>High</b></td>
+              <td><b>Mitigate</b></td>
+            </tr>
+            <tr class="highlight">
+              <td>R2</td>
+              <td>User data not encrypted</td>
+              <td>Likely</td>
+              <td>Critical</td>
+              <td><b>Extreme</b></td>
+              <td><b>Avoid</b></td>
+            </tr>
+            <tr>
+              <td>R3</td>
+              <td>Third-party API unstable</td>
+              <td>Possible</td>
+              <td>Medium</td>
+              <td><b>Medium</b></td>
+              <td><b>Transfer</b></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="register-flow animate d3">
+        <div class="register-step"><span>Step 1</span><b>Identify the risk</b></div>
+        <div class="register-arrow">↓</div>
+        <div class="register-step"><span>Step 2</span><b>Assess likelihood & impact</b></div>
+        <div class="register-arrow">↓</div>
+        <div class="register-step"><span>Step 3</span><b>Assign owner & strategy</b></div>
+        <div class="register-arrow">↓</div>
+        <div class="register-step"><span>Step 4</span><b>Monitor and update</b></div>
+        <div class="matrix-note">Before your Sprint Review, build a register with at least 3 real risks from your product and decide who owns each response.</div>
       </div>
     </div>
     <div class="page-indicator">16 / 22</div>

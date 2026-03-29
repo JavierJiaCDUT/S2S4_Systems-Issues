@@ -9,24 +9,34 @@
   <div class="slide light theme-tech">
     <p class="eyebrow animate">Evolution</p>
     <h2 class="slide-title animate d1">The Complete Chain</h2>
-    <div class="content">
-      <div class="animate d2" style="font-size: clamp(16px, 1.8vw, 24px); color: var(--fg-muted); margin-bottom: 2vh;">
-        "A Failure can create a Hazard, and when a Hazard is triggered under specific conditions, it becomes a Risk."
+    <div class="content visual-stack">
+      <p class="visual-intro animate d2">A system problem becomes more serious as it moves from a hidden defect, to a visible service problem, to a dangerous condition, and finally to a real-world risk.</p>
+      <div class="chain-visual">
+        <div class="chain-node error animate d3">
+          <span class="chain-tag">Start</span>
+          <h3>Error</h3>
+          <p>Code, design, or process flaw exists inside the system.</p>
+          <p><b>Example:</b> Old trading logic was not removed during deployment.</p>
+        </div>
+        <div class="chain-node failure animate d4">
+          <span class="chain-tag">Triggered</span>
+          <h3>Failure</h3>
+          <p>The system stops behaving as intended and produces the wrong service outcome.</p>
+          <p><b>Example:</b> The old module starts sending unintended trades.</p>
+        </div>
+        <div class="chain-node hazard animate d5">
+          <span class="chain-tag">Dangerous State</span>
+          <h3>Hazard</h3>
+          <p>A harmful condition now exists, even if harm has not happened yet.</p>
+          <p><b>Example:</b> Large trades can execute automatically without effective control.</p>
+        </div>
+        <div class="chain-node risk animate d6">
+          <span class="chain-tag">Exposure</span>
+          <h3>Risk</h3>
+          <p>The hazard now has a probability and impact in the real world.</p>
+          <p><b>Example:</b> In a live market, financial loss becomes highly likely and severe.</p>
+        </div>
       </div>
-      <ul class="clean-list" style="margin-top: 2vh;">
-        <li class="animate d3" data-index="1">
-          <b>Error</b> <span style="font-size: 0.8em; color: var(--fg-muted);">(Code or design flaw)</span>
-        </li>
-        <li class="animate d4" data-index="↳">
-          <b style="color: var(--accent);">Failure</b> <span style="font-size: 0.8em; color: var(--fg-muted);">(System fails to work normally)</span>
-        </li>
-        <li class="animate d5" data-index="↳">
-          <b style="color: #ea580c;">Hazard</b> <span style="font-size: 0.8em; color: var(--fg-muted);">(Condition posing potential harm)</span>
-        </li>
-        <li class="animate d6" data-index="↳">
-          <b style="color: #dc2626;">Risk</b> <span style="font-size: 0.8em; color: var(--fg-muted);">(Likelihood × Severity of harm happening)</span>
-        </li>
-      </ul>
     </div>
     <div class="page-indicator">12 / 22</div>
   </div>

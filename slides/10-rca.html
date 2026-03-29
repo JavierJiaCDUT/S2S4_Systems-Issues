@@ -9,20 +9,36 @@
   <div class="slide light theme-tech">
     <p class="eyebrow animate">Methodology</p>
     <h2 class="slide-title animate d1">RCA (Root Cause Analysis): 5 Whys</h2>
-    <div class="content">
-      <div class="animate d2" style="font-size: clamp(16px, 1.8vw, 24px); color: #dc2626; font-weight: 600; margin-bottom: 2vh;">
-        Failure: User cannot login to the system
-      </div>
-      <ul class="clean-list">
-        <li class="animate d3" data-index="1"><b>Why?</b> → Server returns a 500 internal error.</li>
-        <li class="animate d4" data-index="2"><b>Why?</b> → Database connection timeout.</li>
-        <li class="animate d5" data-index="3"><b>Why?</b> → Database connection pool is full.</li>
-        <li class="animate d6" data-index="4"><b>Why?</b> → A specific query did not close the connection.</li>
-        <li class="animate d7" data-index="5"><b>Why?</b> → Missing `finally` block in code to release resources.</li>
-      </ul>
-      <div class="animate d8" style="margin-top: 3vh; padding-top: 2vh; border-top: 2px solid var(--border);">
-        <b>Root Cause:</b> Resource management Logic Error.<br>
-        <span style="color: var(--accent); font-weight: 500;">Action: Add finally block + Write automated test for connection leaks.</span>
+    <div class="content visual-stack">
+      <p class="visual-intro animate d2">RCA keeps asking “Why?” until we stop treating the symptom and uncover the deeper cause that must be fixed.</p>
+      <div class="whys-flow animate d3">
+        <div class="visual-stack">
+          <div class="failure-card">
+            <span class="step-kicker">Observed Failure</span>
+            <p><b>User cannot login to the system</b></p>
+          </div>
+          <div class="root-cause-card">
+            <span class="step-kicker">Root Cause</span>
+            <p><b>Missing <code>finally</code> block</b> causes connections not to be released properly.</p>
+          </div>
+          <div class="action-card">
+            <span class="step-kicker">Corrective Action</span>
+            <p>Add a <code>finally</code> block and create an automated test for connection leaks.</p>
+          </div>
+        </div>
+
+        <div class="whys-arrow-col" aria-hidden="true">
+          <span>→</span>
+          <span>→</span>
+        </div>
+
+        <div class="whys-list">
+          <div class="why-item animate d4"><div class="why-num">1</div><p><b>Why?</b> The server returns a 500 internal error.</p></div>
+          <div class="why-item animate d5"><div class="why-num">2</div><p><b>Why?</b> The database connection times out.</p></div>
+          <div class="why-item animate d6"><div class="why-num">3</div><p><b>Why?</b> The database connection pool is full.</p></div>
+          <div class="why-item animate d7"><div class="why-num">4</div><p><b>Why?</b> A specific query did not close the connection.</p></div>
+          <div class="why-item animate d8"><div class="why-num">5</div><p><b>Why?</b> The code is missing a <code>finally</code> block to release resources.</p></div>
+        </div>
       </div>
     </div>
     <div class="page-indicator">10 / 22</div>

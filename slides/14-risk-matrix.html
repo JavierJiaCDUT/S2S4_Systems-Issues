@@ -4,66 +4,60 @@
   <meta charset="UTF-8">
   <title>Risk Assessment Matrix</title>
   <link rel="stylesheet" href="../css/style.css">
-  <style>
-    .cell-low { color: #059669; font-weight: 500; }
-    .cell-med { color: #d97706; font-weight: 500; }
-    .cell-high { color: #ea580c; font-weight: 700; }
-    .cell-ext { color: #dc2626; font-weight: 800; }
-  </style>
 </head>
 <body>
   <div class="slide light theme-tech">
     <p class="eyebrow animate">Tool</p>
     <h2 class="slide-title animate d1">Risk Assessment Matrix</h2>
-    <div class="content">
-      <table class="data-table animate d2">
-        <thead>
-          <tr>
-            <th>Likelihood / Impact</th>
-            <th>Low</th>
-            <th>Medium</th>
-            <th>High</th>
-            <th>Critical</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><b>Almost Certain</b></td>
-            <td class="cell-med">Medium</td>
-            <td class="cell-high">High</td>
-            <td class="cell-ext">Extreme</td>
-            <td class="cell-ext">Extreme</td>
-          </tr>
-          <tr>
-            <td><b>Likely</b></td>
-            <td class="cell-med">Medium</td>
-            <td class="cell-high">High</td>
-            <td class="cell-high">High</td>
-            <td class="cell-ext">Extreme</td>
-          </tr>
-          <tr>
-            <td><b>Possible</b></td>
-            <td class="cell-low">Low</td>
-            <td class="cell-med">Medium</td>
-            <td class="cell-high">High</td>
-            <td class="cell-high">High</td>
-          </tr>
-          <tr>
-            <td><b>Unlikely</b></td>
-            <td class="cell-low">Low</td>
-            <td class="cell-low">Low</td>
-            <td class="cell-med">Medium</td>
-            <td class="cell-med">Medium</td>
-          </tr>
-          <tr>
-            <td><b>Rare</b></td>
-            <td class="cell-low">Low</td>
-            <td class="cell-low">Low</td>
-            <td class="cell-low">Low</td>
-            <td class="cell-med">Medium</td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="content matrix-layout">
+      <div class="visual-stack animate d2">
+        <p class="visual-intro">Assess each hazard by two dimensions: <b>Likelihood</b> and <b>Impact</b>. Their intersection shows the overall risk level and helps the team decide what must be handled first.</p>
+        <div class="risk-matrix">
+          <div class="matrix-corner">Likelihood / Impact</div>
+          <div class="matrix-col">Low</div>
+          <div class="matrix-col">Medium</div>
+          <div class="matrix-col">High</div>
+          <div class="matrix-col">Critical</div>
+
+          <div class="matrix-row">Almost Certain</div>
+          <div class="matrix-cell medium">Medium</div>
+          <div class="matrix-cell high">High</div>
+          <div class="matrix-cell extreme">Extreme</div>
+          <div class="matrix-cell extreme">Extreme</div>
+
+          <div class="matrix-row">Likely</div>
+          <div class="matrix-cell medium">Medium</div>
+          <div class="matrix-cell high">High</div>
+          <div class="matrix-cell high">High</div>
+          <div class="matrix-cell extreme">Extreme</div>
+
+          <div class="matrix-row">Possible</div>
+          <div class="matrix-cell low">Low</div>
+          <div class="matrix-cell medium">Medium</div>
+          <div class="matrix-cell high">High</div>
+          <div class="matrix-cell high">High</div>
+
+          <div class="matrix-row">Unlikely</div>
+          <div class="matrix-cell low">Low</div>
+          <div class="matrix-cell low">Low</div>
+          <div class="matrix-cell medium">Medium</div>
+          <div class="matrix-cell medium">Medium</div>
+
+          <div class="matrix-row">Rare</div>
+          <div class="matrix-cell low">Low</div>
+          <div class="matrix-cell low">Low</div>
+          <div class="matrix-cell low">Low</div>
+          <div class="matrix-cell medium">Medium</div>
+        </div>
+      </div>
+
+      <div class="matrix-legend animate d3">
+        <div class="legend-item"><span class="legend-swatch low"></span><div><b>Low</b><br>Monitor, but not urgent</div></div>
+        <div class="legend-item"><span class="legend-swatch medium"></span><div><b>Medium</b><br>Needs planned control</div></div>
+        <div class="legend-item"><span class="legend-swatch high"></span><div><b>High</b><br>Action should be prioritized</div></div>
+        <div class="legend-item"><span class="legend-swatch extreme"></span><div><b>Extreme</b><br>Immediate response required</div></div>
+        <div class="matrix-note">Use the matrix after identifying hazards. Then focus first on the <b>High</b> and <b>Extreme</b> zones when preparing your risk response strategy.</div>
+      </div>
     </div>
     <div class="page-indicator">14 / 22</div>
   </div>

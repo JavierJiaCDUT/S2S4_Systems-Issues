@@ -9,18 +9,33 @@
   <div class="slide light theme-tech">
     <p class="eyebrow animate">Case 1</p>
     <h2 class="slide-title animate d1">Knight Capital Trading Disaster (2012)</h2>
-    <div class="content">
-      <ul class="clean-list">
-        <li class="animate d2" data-index="E"><b>Error:</b> When deploying new code, a legacy trading module wasn't correctly removed.</li>
-        <li class="animate d3" data-index="F"><b>Failure:</b> The old code was accidentally activated, executing massive unintended trades.</li>
-        <li class="animate d4" data-index="H"><b>Hazard:</b> System capable of auto-executing large trades without human supervision.</li>
-        <li class="animate d5" data-index="R"><b>Risk:</b> High frequency market means Likelihood = Almost Certain, Impact = Critical &rarr; <b><span class="hl" style="color:#dc2626;">Extreme Risk</span></b>.</li>
-      </ul>
-      <div class="animate d6" style="margin-top: 3vh; background: var(--bg-subtle); padding: 2vh 3vw; border-radius: 8px;">
-        <span class="hl">Lessons Learned:</span><br>
-        1. Legacy code must be deleted completely, not just ignored.<br>
-        2. Rigorous pre-deployment testing is not optional.<br>
-        3. Automated systems need risk control mechanisms (like circuit breakers).
+    <div class="content visual-stack">
+      <p class="visual-intro animate d2">In less than an hour, one deployment mistake escalated into a catastrophic business loss. The case shows why the full chain matters in real systems.</p>
+      <div class="case-chain">
+        <div class="case-node error animate d3">
+          <h3>Error</h3>
+          <p>Legacy trading code was not correctly removed when the new system was deployed.</p>
+        </div>
+        <div class="case-node failure animate d4">
+          <h3>Failure</h3>
+          <p>The old code was accidentally activated and generated massive unintended trades.</p>
+        </div>
+        <div class="case-node hazard animate d5">
+          <h3>Hazard</h3>
+          <p>The system could execute large trades automatically without effective human control.</p>
+        </div>
+        <div class="case-node risk animate d6">
+          <h3>Risk</h3>
+          <p>In a live high-frequency market, the loss became almost certain and extremely severe: <b>$440M in 45 minutes</b>.</p>
+        </div>
+      </div>
+      <div class="lessons-card animate d7">
+        <p><b>Lessons Learned</b></p>
+        <ul>
+          <li>Legacy code should be removed completely, not just ignored.</li>
+          <li>Deployment testing and release controls are essential.</li>
+          <li>Automated systems need safeguards such as limits and circuit breakers.</li>
+        </ul>
       </div>
     </div>
     <div class="page-indicator">18 / 22</div>
