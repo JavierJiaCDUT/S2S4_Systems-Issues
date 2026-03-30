@@ -78,6 +78,8 @@ class SlideController {
         PageUp:     () => this.prev(),
         Home:       () => this.goTo(1),
         End:        () => this.goTo(this.totalSlides),
+        j:          () => this.jumpToPage(),
+        J:          () => this.jumpToPage(),
         f:          () => this.toggleFullscreen(),
         F:          () => this.toggleFullscreen(),
         Escape:     () => this.closeNavigator(),
@@ -94,6 +96,7 @@ class SlideController {
   }
 
   bindNavigation() {
+    document.getElementById('jumpBtn')?.addEventListener('click', () => this.jumpToPage());
     document.getElementById('prevBtn')?.addEventListener('click', () => this.prev());
     document.getElementById('nextBtn')?.addEventListener('click', () => this.next());
     document.getElementById('fsBtn')?.addEventListener('click', () => this.toggleFullscreen());
@@ -187,6 +190,18 @@ class SlideController {
   toggleFullscreen() {
     if (!document.fullscreenElement) document.documentElement.requestFullscreen?.();
     else document.exitFullscreen?.();
+  }
+
+  jumpToPage() {
+    const input = prompt(`Jump to page (1 - ${this.totalSlides}):`, this.currentSlide);
+    if (input !== null) {
+      const n = parseInt(input, 10);
+      if (!isNaN(n) && n >= 1 && n <= this.totalSlides) {
+        this.goTo(n);
+      } else {
+        alert(`Invalid page number. Please enter a number between 1 and ${this.totalSlides}.`);
+      }
+    }
   }
 }
 
